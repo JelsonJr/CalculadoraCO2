@@ -50,6 +50,7 @@ public class ViewInicial {
 		frame.getContentPane().add(btnCalculadora);
 		
 		JButton btnFotossintese = new JButton("FOTOSS\u00CDNTESE");
+		btnFotossintese.addActionListener((ActionEvent e) -> frameFotossintese());
 		btnFotossintese.setFont(new Font("Monospaced", Font.PLAIN, 12));
 		btnFotossintese.setBounds(279, 110, 125, 25);
 		frame.getContentPane().add(btnFotossintese);
@@ -71,6 +72,12 @@ public class ViewInicial {
 	
 	public void frameCalculadora() {
 		ViewCalculadora view = new ViewCalculadora();
+		view.setSize(700, 400);
+		view.setVisible(true);
+	}
+	
+	public void frameFotossintese() {
+		ViewFotossintese view = new ViewFotossintese();
 		view.setSize(700, 400);
 		view.setVisible(true);
 	}
