@@ -56,6 +56,7 @@ public class ViewInicial {
 		frame.getContentPane().add(btnFotossintese);
 		
 		JButton btnEfeitoEstufa = new JButton("EFEITO ESTUFA");
+		btnEfeitoEstufa.addActionListener((ActionEvent e) -> frameEfeitoEstufa());
 		btnEfeitoEstufa.setFont(new Font("Monospaced", Font.PLAIN, 12));
 		btnEfeitoEstufa.setBounds(279, 155, 125, 25);
 		frame.getContentPane().add(btnEfeitoEstufa);
@@ -78,6 +79,12 @@ public class ViewInicial {
 	
 	public void frameFotossintese() {
 		ViewFotossintese view = new ViewFotossintese();
+		view.setSize(700, 400);
+		view.setVisible(true);
+	}
+	
+	public void frameEfeitoEstufa() {
+		ViewEfeitoEstufa view = new ViewEfeitoEstufa();
 		view.setSize(700, 400);
 		view.setVisible(true);
 	}

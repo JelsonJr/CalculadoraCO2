@@ -29,7 +29,7 @@ public class LimitaCaracteres extends PlainDocument {
 		//filtro de tipo de numeros/caracteres
 		String regex = "";
 		switch(tpNumero) {
-			case NUMEROINTEIRO: regex = "[^0-7]"; break;
+			case NUMEROINTEIRO: regex = "[^1-7]"; break;
 			case NUMERODECIMAL: regex = "[^0-9,.]"; break;
 		}
 		//substituindo

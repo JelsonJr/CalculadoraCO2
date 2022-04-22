@@ -28,9 +28,9 @@ public class ViewCalculadora extends JDialog {
 	private double semanasDoAno = 52.1;
 	private int co2AbsorvidoPorArvore = 25;
 	private JTextField txtKmRodados;
+	private JTextField txtDiasSemanas;
 	private Botoes botoes = new Botoes();
 	private ChecaFuncoes checador = new ChecaFuncoes();
-	private JTextField txtDiasSemanas;
 
 	private JComboBox<Object> caixaCombustivel;
 
@@ -111,7 +111,7 @@ public class ViewCalculadora extends JDialog {
 	}
 
 	private double conta() {
-		checador.checaCampoTxt(txtDiasSemanas);
+		checador.checaCampoTxt(txtDiasSemanas); 
 		checador.checaCampoTxt(txtKmRodados);
 		
 		double conta = (checador.conversor(txtDiasSemanas.getText()) * checador.conversor(txtKmRodados.getText())
