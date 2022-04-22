@@ -19,7 +19,5 @@ public class Teste2 extends Teste {
 	public Teste2() {
 		super("bebebe");
 		System.out.println("rodando teste");
-	}
-	
-	
+	}	
 }
