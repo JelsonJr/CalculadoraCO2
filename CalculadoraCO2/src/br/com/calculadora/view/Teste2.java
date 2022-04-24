@@ -8,7 +8,7 @@ public class Teste2 extends Teste {
 	
 	public static void main(String[] args) {
 		try {
-			Teste2 dialog = new Teste2();
+			Teste2 dialog = new Teste2("aaa");
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -16,8 +16,8 @@ public class Teste2 extends Teste {
 		}
 	}
 	
-	public Teste2() {
-		super("bebebe");
+	public Teste2(String string) {
+		super(string);
 		System.out.println("rodando teste");
 	}
 }
