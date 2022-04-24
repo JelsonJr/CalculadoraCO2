@@ -84,7 +84,7 @@ public class ViewInicial {
 		view.setSize(700, 400);
 		view.setVisible(true);
 	}
-	
+	//teste
 	private void frameEfeitoEstufa() {
 		ViewEfeitoEstufa view = new ViewEfeitoEstufa();
 		view.setSize(700, 400);
