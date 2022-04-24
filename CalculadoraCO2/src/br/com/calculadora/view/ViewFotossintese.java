@@ -15,7 +15,6 @@ import java.awt.Color;
 public class ViewFotossintese extends JDialog {
 
 	private Botoes botoes = new Botoes();
-
 	private static final long serialVersionUID = 68051319765757823L;
 	private final JPanel contentPanel = new JPanel();
 
@@ -47,6 +46,5 @@ public class ViewFotossintese extends JDialog {
 		contentPanel.add(botoes.visualizarTexto("Fotossintese.txt"));
 		contentPanel.add(botoes.visualizarImg("fotossintese.jpg"));
 		contentPanel.add(botoes.botaoVoltar(this));
-
 	}
 }

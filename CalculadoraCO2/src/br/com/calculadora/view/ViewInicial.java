@@ -62,29 +62,43 @@ public class ViewInicial {
 		frame.getContentPane().add(btnEfeitoEstufa);
 		
 		JButton btnCombustao = new JButton("COMBUST\u00C3O");
+		btnCombustao.addActionListener((ActionEvent e) -> frameCombustao());
 		btnCombustao.setFont(new Font("Monospaced", Font.PLAIN, 12));
 		btnCombustao.setBounds(279, 200, 125, 25);
 		frame.getContentPane().add(btnCombustao);
 		
 		JButton btnCreditos = new JButton("Cr\u00E9ditos");
+		btnCreditos.addActionListener((ActionEvent e) -> frameCreditos());
 		btnCreditos.setBounds(6, 315, 90, 30);
 		frame.getContentPane().add(btnCreditos);
 	}
 	
-	public void frameCalculadora() {
+	private void frameCalculadora() {
 		ViewCalculadora view = new ViewCalculadora();
 		view.setSize(700, 400);
 		view.setVisible(true);
 	}
 	
-	public void frameFotossintese() {
+	private void frameFotossintese() {
 		ViewFotossintese view = new ViewFotossintese();
 		view.setSize(700, 400);
 		view.setVisible(true);
 	}
 	
-	public void frameEfeitoEstufa() {
+	private void frameEfeitoEstufa() {
 		ViewEfeitoEstufa view = new ViewEfeitoEstufa();
+		view.setSize(700, 400);
+		view.setVisible(true);
+	}
+	
+	private void frameCombustao() {
+		ViewCombustao view = new ViewCombustao();
+		view.setSize(700, 400);
+		view.setVisible(true);
+	}
+	
+	private void frameCreditos() {
+		ViewCreditos view = new ViewCreditos();
 		view.setSize(700, 400);
 		view.setVisible(true);
 	}

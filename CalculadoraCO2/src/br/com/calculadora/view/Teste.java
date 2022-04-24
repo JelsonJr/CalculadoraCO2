@@ -10,15 +10,10 @@ import javax.swing.JLabel;
 
 public class Teste extends JDialog {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		try {
 			Teste dialog = new Teste("aiaiai uiuiui");
@@ -29,9 +24,6 @@ public class Teste extends JDialog {
 		}
 	}
 
-	/**
-	 * Create the dialog.
-	 */
 	public Teste(String teste) {
 		getContentPane().setBackground(Color.WHITE);
 		setBackground(Color.WHITE);

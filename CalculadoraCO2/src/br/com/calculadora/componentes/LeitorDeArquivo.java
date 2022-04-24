@@ -28,7 +28,7 @@ class LeitorDeArquivo extends JFrame {
 		}
 	}
 	
-	private JLabel exibeArquivoImg(String nomeDaImg) {
+	private JLabel labelArquivoImg(String nomeDaImg) {
 		JLabel lblImagem = new JLabel();
 		lblImagem.setIcon(new ImageIcon(nomeDaImg));
 		lblImagem.setBounds(0, 0, 450, 350);
@@ -58,6 +58,6 @@ class LeitorDeArquivo extends JFrame {
 		JDialog view = new JDialog();
 		view.setBounds(220, 250, 460, 375);
 		view.setVisible(true);
-		view.add(exibeArquivoImg(nomeArquivo));
+		view.add(labelArquivoImg(nomeArquivo));
 	}
 }
