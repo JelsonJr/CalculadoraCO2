@@ -90,7 +90,7 @@ public class ViewInicial {
 		view.setSize(700, 400);
 		view.setVisible(true);
 	}
-	
+	//testeeee
 	private void frameCombustao() {
 		ViewCombustao view = new ViewCombustao();
 		view.setSize(700, 400);
