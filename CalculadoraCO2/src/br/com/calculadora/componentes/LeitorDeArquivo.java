@@ -1,6 +1,7 @@
 package br.com.calculadora.componentes;
 
 import java.awt.Color;
+
 import java.awt.Component;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,13 +9,10 @@ import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
-class LeitorDeArquivo extends JFrame {
-
-	private static final long serialVersionUID = 5750292563409359477L;
+class LeitorDeArquivo {
 
 	private void leitorDeArquivoTxt(String string, JTextArea jta) {
 		Scanner scanner = null;
@@ -28,7 +26,7 @@ class LeitorDeArquivo extends JFrame {
 		}
 	}
 	
-	private JLabel labelArquivoImg(String nomeDaImg) {
+	private JLabel insereArquivoImg(String nomeDaImg) {
 		JLabel lblImagem = new JLabel();
 		lblImagem.setIcon(new ImageIcon(nomeDaImg));
 		lblImagem.setBounds(0, 0, 450, 350);
@@ -36,7 +34,7 @@ class LeitorDeArquivo extends JFrame {
 		return lblImagem;
 	}
 	
-	private Component textArea (String nomeArquivo) {
+	private Component insereArquivoTexto (String nomeArquivo) {
 		JTextArea jta = new JTextArea();
 		jta.setBorder(null);
 		jta.setEditable(false);
@@ -47,17 +45,17 @@ class LeitorDeArquivo extends JFrame {
 		return jta;
 	}
 	
-	protected void textoEmTela(String nomeArquivo) {
+	protected void exibeTextoEmTela(String nomeArquivo) {
 		JDialog view = new JDialog();
 		view.setBounds(145, 150, 610, 300);
 		view.setVisible(true);
-		view.add(textArea(nomeArquivo));
+		view.add(insereArquivoTexto(nomeArquivo));
 	}
 	
-	protected void imagemEmTela(String nomeArquivo) {
+	protected void exibeImagemEmTela(String nomeArquivo) {
 		JDialog view = new JDialog();
 		view.setBounds(220, 250, 460, 375);
 		view.setVisible(true);
-		view.add(labelArquivoImg(nomeArquivo));
+		view.add(insereArquivoImg(nomeArquivo));
 	}
 }

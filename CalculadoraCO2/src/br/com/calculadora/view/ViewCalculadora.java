@@ -1,6 +1,7 @@
 package br.com.calculadora.view;
 
 import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Font;
 
@@ -15,7 +16,7 @@ import javax.swing.border.EmptyBorder;
 
 import br.com.calculadora.componentes.Botoes;
 import br.com.calculadora.funcoes.ChecaFuncoes;
-import br.com.calculadora.funcoes.Combustivel;
+import br.com.calculadora.funcoes.Combustiveis;
 import br.com.calculadora.funcoes.LimitaCaracteres;
 import br.com.calculadora.funcoes.LimitaCaracteres.TipoNumero;
 import java.awt.event.ActionEvent;
@@ -70,7 +71,7 @@ public class ViewCalculadora extends JDialog {
 
 		caixaCombustivel = new JComboBox<Object>();
 		caixaCombustivel.setModel(new DefaultComboBoxModel<Object>(new Object[] { "<Selecione o combust\u00EDvel>",
-				Combustivel.Gasolina, Combustivel.Etanol, Combustivel.Diesel }));
+				Combustiveis.Gasolina, Combustiveis.Etanol, Combustiveis.Diesel }));
 		caixaCombustivel.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		caixaCombustivel.setBounds(75, 195, 210, 22);
 		contentPanel.add(caixaCombustivel);
@@ -101,13 +102,14 @@ public class ViewCalculadora extends JDialog {
 
 	private double caixaCombinacao() {
 		checador.checaCaixaCombinacao(caixaCombustivel);
+		
 
-		if (caixaCombustivel.getSelectedItem().equals(Combustivel.Gasolina))
-			return Combustivel.Gasolina.getValor();
-		else if (caixaCombustivel.getSelectedItem().equals(Combustivel.Etanol))
-			return Combustivel.Etanol.getValor();
+		if (caixaCombustivel.getSelectedItem().equals(Combustiveis.Gasolina))
+			return Combustiveis.Gasolina.getValor();
+		else if (caixaCombustivel.getSelectedItem().equals(Combustiveis.Etanol))
+			return Combustiveis.Etanol.getValor();
 		else
-			return Combustivel.Diesel.getValor();
+			return Combustiveis.Diesel.getValor();
 	}
 
 	private double conta() {

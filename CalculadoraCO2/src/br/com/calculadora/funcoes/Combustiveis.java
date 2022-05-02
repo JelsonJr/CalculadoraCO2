@@ -1,13 +1,13 @@
 package br.com.calculadora.funcoes;
 
-public enum Combustivel {
+public enum Combustiveis {
 	Gasolina(0.13), 
 	Etanol(0.11), 
 	Diesel(0.17);
 
 	private double valor;
 
-	Combustivel(double valor) {
+	Combustiveis(double valor) {
 		this.valor = valor;
 	}
 
