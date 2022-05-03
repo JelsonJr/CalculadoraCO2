@@ -4,9 +4,7 @@ import java.awt.Color;
 
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -49,21 +47,14 @@ public class ViewInicial {
 
 		frame.getContentPane().add(botoes.chamaViews("CALCULAR", 65, new ViewCalculadora()));
 
-		frame.getContentPane().add(botoes.chamaViews("FOTOSSÍNTESE", 110, new ViewFotossintese()));
+		frame.getContentPane().add(botoes.chamaViews("FOTOSSÍNTESE", 110,
+				new ViewGeral("COMO OCORRE A FOTOSSÍNTESE?", "Fotossintese.txt", "fotossintese.jpg")));
 
-		frame.getContentPane().add(botoes.chamaViews("EFEITO ESTUFA", 155, new ViewEfeitoEstufa()));
+		frame.getContentPane().add(botoes.chamaViews("EFEITO ESTUFA", 155,
+				new ViewGeral("O PROCESSO DO EFEITO ESTUFA", "EfeitoEstufa.txt", "Efeito_estufa.jpg")));
 
-		frame.getContentPane().add(botoes.chamaViews("COMBUSTÃO", 200, new ViewCombustao()));
+		frame.getContentPane().add(botoes.chamaViews("COMBUSTÃO", 200,
+				new ViewGeral("COMO ACONTECE A COMBUSTÃO?", "Combustao.txt", "fotossintese.jpg")));
 
-		JButton btnCreditos = new JButton("Cr\u00E9ditos");
-		btnCreditos.addActionListener((ActionEvent e) -> frameCreditos());
-		btnCreditos.setBounds(6, 315, 90, 30);
-		frame.getContentPane().add(btnCreditos);
-	}
-
-	private void frameCreditos() {
-		ViewCreditos view = new ViewCreditos();
-		view.setSize(700, 400);
-		view.setVisible(true);
 	}
 }

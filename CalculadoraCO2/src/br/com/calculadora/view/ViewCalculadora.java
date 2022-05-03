@@ -1,9 +1,9 @@
 package br.com.calculadora.view;
 
 import java.awt.BorderLayout;
-
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -15,11 +15,12 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import br.com.calculadora.componentes.Botoes;
-import br.com.calculadora.funcoes.ChecaFuncoes;
+import br.com.calculadora.funcoes.ChecaCaixaCombinacao;
+import br.com.calculadora.funcoes.ChecaCaixaDeTexto;
+import br.com.calculadora.funcoes.ChecadorDeFuncoes;
 import br.com.calculadora.funcoes.Combustiveis;
 import br.com.calculadora.funcoes.LimitaCaracteres;
 import br.com.calculadora.funcoes.LimitaCaracteres.TipoNumero;
-import java.awt.event.ActionEvent;
 
 public class ViewCalculadora extends JDialog {
 
@@ -31,7 +32,7 @@ public class ViewCalculadora extends JDialog {
 	private JTextField txtKmRodados;
 	private JTextField txtDiasSemanas;
 	private Botoes botoes = new Botoes();
-	private ChecaFuncoes checador = new ChecaFuncoes();
+	private ChecadorDeFuncoes checador = new ChecadorDeFuncoes();
 
 	private JComboBox<Object> caixaCombustivel;
 
@@ -76,12 +77,6 @@ public class ViewCalculadora extends JDialog {
 		caixaCombustivel.setBounds(75, 195, 210, 22);
 		contentPanel.add(caixaCombustivel);
 
-		JButton btnCalculo = new JButton("Calcular");
-		btnCalculo.addActionListener((ActionEvent e) -> checador.checaResultado(conta()));
-		btnCalculo.setFont(new Font("Monospaced", Font.PLAIN, 15));
-		btnCalculo.setBounds(284, 271, 115, 25);
-		contentPanel.add(btnCalculo);
-
 		txtKmRodados = new JTextField();
 		txtKmRodados.setBounds(75, 47, 225, 25);
 		txtKmRodados.setDocument(new LimitaCaracteres(100, TipoNumero.NUMERODECIMAL));
@@ -94,14 +89,19 @@ public class ViewCalculadora extends JDialog {
 		txtDiasSemanas.setBounds(75, 123, 225, 25);
 		contentPanel.add(txtDiasSemanas);
 
+		JButton btnCalculo = new JButton("Calcular");
+		btnCalculo.addActionListener((ActionEvent e) -> checador.checaResultado(conta()));
+		btnCalculo.setFont(new Font("Monospaced", Font.PLAIN, 15));
+		btnCalculo.setBounds(284, 271, 115, 25);
+		contentPanel.add(btnCalculo);
+
 		contentPanel.add(botoes.botaoVoltar(this));
 		contentPanel.add(botoes.limpaCampos(txtKmRodados, 320, 47));
 		contentPanel.add(botoes.limpaCampos(txtDiasSemanas, 320, 123));
-
 	}
 
 	private double caixaCombinacao() {
-		checador.checaCaixaCombinacao(caixaCombustivel);
+		checador.checaPreenchimento(new ChecaCaixaCombinacao(), caixaCombustivel);
 		
 
 		if (caixaCombustivel.getSelectedItem().equals(Combustiveis.Gasolina))
@@ -113,8 +113,8 @@ public class ViewCalculadora extends JDialog {
 	}
 
 	private double conta() {
-		checador.checaCampoTxt(txtDiasSemanas); 
-		checador.checaCampoTxt(txtKmRodados);
+		checador.checaPreenchimento(new ChecaCaixaDeTexto(), txtDiasSemanas); 
+		checador.checaPreenchimento(new ChecaCaixaDeTexto(), txtKmRodados);
 		
 		double conta = (checador.conversor(txtDiasSemanas.getText()) * checador.conversor(txtKmRodados.getText())
 				* caixaCombinacao() * semanasDoAno) / co2AbsorvidoPorArvore;

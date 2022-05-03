@@ -13,16 +13,16 @@ import br.com.calculadora.componentes.Botoes;
 
 import javax.swing.JLabel;
 
-//OLHE, TESTE EXTENDE JDIALOG, QUE É UMA JANELA DE EXIBIÇÃO
-public class Teste extends JDialog {
+public class ViewGeral extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private Botoes botoes = new Botoes();
 
-	//A CONSTRUÇÃO DA JANELA DE EXIBIÇÃO, O TÍTULO E A EXIBIÇÃO DOS BOTÕES E ARQUIVOS
-	public Teste(String titulo, String arquivoDeTexto, String arquivoDeImagem) {
-		//O MOLDE DESSA JANELA, O TAMANHO, COR, FUNDO, BORDA E LAYOUT
+	// O CONSTRUTOR RECEBERIA O TITULO DA VIEW, O NOME DO ARQUIVO DE TEXTO E IMAGEM
+	// (QUE ESTÃO NA FONTE DO PROJETO)
+	public ViewGeral(String titulo, String arquivoDeTexto, String arquivoDeImagem) {
+		// O MOLDE DESSA JANELA, O TAMANHO, COR, FUNDO, BORDA E LAYOUT
 		getContentPane().setBackground(Color.WHITE);
 		setBackground(Color.WHITE);
 		setBounds(100, 100, 700, 400);
@@ -31,14 +31,14 @@ public class Teste extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		
-		//O TÍTULO DESSA JANELA
+
+		// O TÍTULO DESSA JANELA
 		JLabel lblTitulo = new JLabel(titulo);
 		lblTitulo.setFont(new Font("Monospaced", Font.BOLD, 15));
 		lblTitulo.setBounds(217, 15, 250, 20);
 		contentPanel.add(lblTitulo);
-		
-		//OS COMPONENTES DELA
+
+		// OS COMPONENTES DELA
 		contentPanel.add(botoes.visualizarTexto(arquivoDeTexto));
 		contentPanel.add(botoes.visualizarImg(arquivoDeImagem));
 		contentPanel.add(botoes.botaoVoltar(this));
