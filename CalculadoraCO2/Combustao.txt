@@ -1,7 +1,8 @@
    A combustão é caracterizada por três partes necessárias: Combustível: material oxidável que reage com o 
-oxigênio, pegando fogo. Os combustíveis podem ser sólidos (carvão, madeira, papel), líquidos (gasolina, e-
+oxigênio, pegando fogo. 
+Os combustíveis podem ser sólidos (carvão, madeira, papel), líquidos (gasolina, e-
 tanol e óleo diesel) e gasosos (gás butano, gás metano); 
-   Comburente: geralmente é o oxigênio do ar, que pode estar na forma pura ou misturado com outros gases
+   Comburente: geralmente é o oxigênio do ar (O2(g)), que pode estar na forma pura ou misturado com outros gases
 , como acontece no caso do ar. Se não houver suprimento de oxigênio suficiente no ar, a reação não ocorre. 
 No ar, temos cerca de 20% de O2(g), e o limite para que haja combustão é 9% para o carvão e 16% para os 
 demais combustíveis. Uma experiência que comprova a veracidade desse fato é quando pegamos uma ve-

@@ -9,7 +9,6 @@ import javax.swing.JDialog;
 import javax.swing.JTextField;
 
 public class Botoes {
-	private LeitorDeArquivo leitorArquivo = new LeitorDeArquivo();
 
 	public JButton botaoVoltar(JDialog dialogFrame) {
 		JButton botaoVoltar = new JButton("<<<");
@@ -29,20 +28,8 @@ public class Botoes {
 		return botao;
 	}
 
-	public JButton visualizarTexto(String nomeArquivo) {
-		JButton botaoTxt = new JButton("Visualizar");
-		botaoTxt.addActionListener((ActionEvent e) -> leitorArquivo.exibeTextoEmTela(nomeArquivo));
-		botaoTxt.setBounds(292, 83, 100, 35);
-
-		return botaoTxt;
-	}
-
-	public JButton visualizarImg(String nomeImg) {
-		JButton botaoImg = new JButton("Visualizar");
-		botaoImg.addActionListener((ActionEvent e) -> leitorArquivo.exibeImagemEmTela(nomeImg));
-		botaoImg.setBounds(292, 183, 100, 35);
-
-		return botaoImg;
+	public JButton visualizarArquivo(String nomeArquivo, BotaoDeArquivo btnArquivo) {
+		return btnArquivo.visualizarArquivo(nomeArquivo);
 	}
 
 	public JButton chamaViews(String textoBotao, int posicaoY, JDialog frame) {
@@ -55,6 +42,5 @@ public class Botoes {
 		botao.setBounds(279, posicaoY, 125, 25);
 
 		return botao;
-
 	}
 }

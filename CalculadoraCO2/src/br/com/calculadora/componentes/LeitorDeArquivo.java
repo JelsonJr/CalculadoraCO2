@@ -15,7 +15,7 @@ import javax.swing.JTextArea;
 class LeitorDeArquivo {
 
 	private void leitorDeArquivoTxt(String string, JTextArea jta) {
-		Scanner scanner = null;
+		Scanner scanner;
 		try {
 			scanner = new Scanner(new File(string), "UTF-8");
 			while (scanner.hasNextLine()) {
@@ -34,7 +34,7 @@ class LeitorDeArquivo {
 		return lblImagem;
 	}
 	
-	private Component insereArquivoTexto (String nomeArquivo) {
+	private Component insereArquivoTexto(String nomeArquivo) {
 		JTextArea jta = new JTextArea();
 		jta.setBorder(null);
 		jta.setEditable(false);

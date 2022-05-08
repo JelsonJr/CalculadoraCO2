@@ -22,7 +22,7 @@ import br.com.calculadora.funcoes.Combustiveis;
 import br.com.calculadora.funcoes.LimitaCaracteres;
 import br.com.calculadora.funcoes.LimitaCaracteres.TipoNumero;
 
-public class ViewCalculadora extends JDialog {
+public class CalculadoraCO2 extends JDialog {
 
 	private static final long serialVersionUID = -8257849889926054941L;
 
@@ -38,7 +38,7 @@ public class ViewCalculadora extends JDialog {
 
 	public static void main(String[] args) {
 		try {
-			ViewCalculadora dialog = new ViewCalculadora();
+			CalculadoraCO2 dialog = new CalculadoraCO2();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -46,7 +46,7 @@ public class ViewCalculadora extends JDialog {
 		}
 	}
 
-	public ViewCalculadora() {
+	public CalculadoraCO2() {
 		setBackground(Color.WHITE);
 		setForeground(Color.LIGHT_GRAY);
 		setBounds(100, 100, 700, 400);

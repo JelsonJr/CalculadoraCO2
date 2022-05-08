@@ -45,16 +45,16 @@ public class ViewInicial {
 		lblTituloInicial.setFont(new Font("Monospaced", Font.BOLD, 20));
 		frame.getContentPane().add(lblTituloInicial);
 
-		frame.getContentPane().add(botoes.chamaViews("CALCULAR", 65, new ViewCalculadora()));
+		frame.getContentPane().add(botoes.chamaViews("CALCULAR", 65, new CalculadoraCO2()));
 
 		frame.getContentPane().add(botoes.chamaViews("FOTOSSÍNTESE", 110,
-				new ViewGeral("COMO OCORRE A FOTOSSÍNTESE?", "Fotossintese.txt", "fotossintese.jpg")));
+				new ViewGenerica("COMO OCORRE A FOTOSSÍNTESE?", "Fotossintese.txt", "fotossintese.jpg")));
 
 		frame.getContentPane().add(botoes.chamaViews("EFEITO ESTUFA", 155,
-				new ViewGeral("O PROCESSO DO EFEITO ESTUFA", "EfeitoEstufa.txt", "Efeito_estufa.jpg")));
+				new ViewGenerica("O PROCESSO DO EFEITO ESTUFA", "EfeitoEstufa.txt", "Efeito_estufa.jpg")));
 
 		frame.getContentPane().add(botoes.chamaViews("COMBUSTÃO", 200,
-				new ViewGeral("COMO ACONTECE A COMBUSTÃO?", "Combustao.txt", "fotossintese.jpg")));
+				new ViewGenerica("COMO ACONTECE A COMBUSTÃO?", "Combustao.txt", "fotossintese.jpg")));
 
 	}
 }
