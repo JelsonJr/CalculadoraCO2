@@ -15,12 +15,13 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import br.com.calculadora.componentes.Botoes;
-import br.com.calculadora.funcoes.ChecaCaixaCombinacao;
-import br.com.calculadora.funcoes.ChecaCaixaDeTexto;
+import br.com.calculadora.funcoes.ChecadorCaixaCombinacao;
+import br.com.calculadora.funcoes.ChecadorCaixaDeTexto;
 import br.com.calculadora.funcoes.ChecadorDeFuncoes;
 import br.com.calculadora.funcoes.Combustiveis;
-import br.com.calculadora.funcoes.LimitaCaracteres;
-import br.com.calculadora.funcoes.LimitaCaracteres.TipoNumero;
+import br.com.calculadora.funcoes.CoordenadaCartesiana;
+import br.com.calculadora.funcoes.LimitadorDeCaracteres;
+import br.com.calculadora.funcoes.LimitadorDeCaracteres.TipoNumero;
 
 public class CalculadoraCO2 extends JDialog {
 
@@ -79,12 +80,12 @@ public class CalculadoraCO2 extends JDialog {
 
 		txtKmRodados = new JTextField();
 		txtKmRodados.setBounds(75, 47, 225, 25);
-		txtKmRodados.setDocument(new LimitaCaracteres(100, TipoNumero.NUMERODECIMAL));
+		txtKmRodados.setDocument(new LimitadorDeCaracteres(100, TipoNumero.NUMERODECIMAL));
 		contentPanel.add(txtKmRodados);
 		txtKmRodados.setColumns(10);
 
 		txtDiasSemanas = new JTextField();
-		txtDiasSemanas.setDocument(new LimitaCaracteres(1, TipoNumero.NUMEROINTEIRO));
+		txtDiasSemanas.setDocument(new LimitadorDeCaracteres(1, TipoNumero.NUMEROINTEIRO));
 		txtDiasSemanas.setColumns(10);
 		txtDiasSemanas.setBounds(75, 123, 225, 25);
 		contentPanel.add(txtDiasSemanas);
@@ -94,14 +95,15 @@ public class CalculadoraCO2 extends JDialog {
 		btnCalculo.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		btnCalculo.setBounds(284, 271, 115, 25);
 		contentPanel.add(btnCalculo);
-
+		
+		//320, 47, 123
 		contentPanel.add(botoes.botaoVoltar(this));
-		contentPanel.add(botoes.limpaCampos(txtKmRodados, 320, 47));
-		contentPanel.add(botoes.limpaCampos(txtDiasSemanas, 320, 123));
+		contentPanel.add(botoes.limpaCampos(txtKmRodados, new CoordenadaCartesiana(320, 47)));
+		contentPanel.add(botoes.limpaCampos(txtDiasSemanas, new CoordenadaCartesiana(320, 123)));
 	}
 
 	private double caixaCombinacao() {
-		checador.checaPreenchimento(new ChecaCaixaCombinacao(), caixaCombustivel);
+		checador.checaPreenchimento(new ChecadorCaixaCombinacao(), caixaCombustivel);
 		
 
 		if (caixaCombustivel.getSelectedItem().equals(Combustiveis.Gasolina))
@@ -113,10 +115,10 @@ public class CalculadoraCO2 extends JDialog {
 	}
 
 	private double conta() {
-		checador.checaPreenchimento(new ChecaCaixaDeTexto(), txtDiasSemanas); 
-		checador.checaPreenchimento(new ChecaCaixaDeTexto(), txtKmRodados);
+		checador.checaPreenchimento(new ChecadorCaixaDeTexto(), txtDiasSemanas); 
+		checador.checaPreenchimento(new ChecadorCaixaDeTexto(), txtKmRodados);
 		
-		double conta = (checador.conversor(txtDiasSemanas.getText()) * checador.conversor(txtKmRodados.getText())
+		double conta = (checador.converteStringEmDouble(txtDiasSemanas.getText()) * checador.converteStringEmDouble(txtKmRodados.getText())
 				* caixaCombinacao() * semanasDoAno) / co2AbsorvidoPorArvore;
 		
 		return Math.ceil(conta);

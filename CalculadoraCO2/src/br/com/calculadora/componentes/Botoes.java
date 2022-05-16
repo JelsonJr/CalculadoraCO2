@@ -8,8 +8,10 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JTextField;
 
-public class Botoes {
+import br.com.calculadora.funcoes.CoordenadaCartesiana;
 
+public class Botoes {
+	
 	public JButton botaoVoltar(JDialog dialogFrame) {
 		JButton botaoVoltar = new JButton("<<<");
 		botaoVoltar.setFont(new Font("Monospaced", Font.PLAIN, 11));
@@ -19,10 +21,10 @@ public class Botoes {
 		return botaoVoltar;
 	}
 
-	public JButton limpaCampos(JTextField campo, int x, int y) {
+	public JButton limpaCampos(JTextField campo, CoordenadaCartesiana coordenada) {
 		JButton botao = new JButton("Limpar campo");
 		botao.setFont(new Font("Monospaced", Font.PLAIN, 11));
-		botao.setBounds(x, y, 125, 25);
+		botao.setBounds(coordenada.getPosicaoX(), coordenada.getPosicaoY(), 125, 25);
 		botao.addActionListener((ActionEvent e) -> campo.setText(""));
 
 		return botao;
@@ -32,7 +34,7 @@ public class Botoes {
 		return btnArquivo.visualizarArquivo(nomeArquivo);
 	}
 
-	public JButton chamaViews(String textoBotao, int posicaoY, JDialog frame) {
+	public JButton chamaViews(String textoBotao, JDialog frame, int posicaoY) {
 		JButton botao = new JButton(textoBotao);
 		botao.addActionListener((ActionEvent e) -> {
 			frame.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);

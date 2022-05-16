@@ -10,7 +10,7 @@ public class BotaoImagem implements BotaoDeArquivo {
 	@Override
 	public JButton visualizarArquivo(String nomeArquivo) {
 		JButton botaoImg = new JButton("Visualizar");
-		botaoImg.addActionListener((ActionEvent e) -> leitorArquivo.exibeImagemEmTela(nomeArquivo));
+		botaoImg.addActionListener((ActionEvent e) -> leitorArquivo.exibeImagem(nomeArquivo));
 		botaoImg.setBounds(292, 183, 100, 35);
 
 		return botaoImg;

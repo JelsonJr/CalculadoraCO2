@@ -1,17 +1,16 @@
 package br.com.calculadora.funcoes;
 
-
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
 public class ChecadorDeFuncoes {
 
-	public double conversor(String string) {
+	public double converteStringEmDouble(String string) {
 		double numero = Double.parseDouble(string);
 		return numero;
 	}
 	
-	public void checaPreenchimento(Checador checador, JComponent componente) {
+	public void checaPreenchimento(ChecadorDeComponentes checador, JComponent componente) {
 		checador.checaPreenchimento(componente);
 	}
 

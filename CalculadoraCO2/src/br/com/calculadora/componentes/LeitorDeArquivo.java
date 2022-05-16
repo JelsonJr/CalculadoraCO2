@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 
 class LeitorDeArquivo {
 
-	private void leitorDeArquivoTxt(String string, JTextArea jta) {
+	private void leitorDeTexto(String string, JTextArea jta) {
 		Scanner scanner;
 		try {
 			scanner = new Scanner(new File(string), "UTF-8");
@@ -40,19 +40,19 @@ class LeitorDeArquivo {
 		jta.setEditable(false);
 		jta.setBounds(0, 0, 600, 240);
 		jta.setBackground(Color.WHITE);
-		leitorDeArquivoTxt(nomeArquivo, jta);
+		leitorDeTexto(nomeArquivo, jta);
 		
 		return jta;
 	}
 	
-	protected void exibeTextoEmTela(String nomeArquivo) {
+	protected void exibeTexto(String nomeArquivo) {
 		JDialog view = new JDialog();
 		view.setBounds(145, 150, 610, 300);
 		view.setVisible(true);
 		view.add(insereArquivoTexto(nomeArquivo));
 	}
 	
-	protected void exibeImagemEmTela(String nomeArquivo) {
+	protected void exibeImagem(String nomeArquivo) {
 		JDialog view = new JDialog();
 		view.setBounds(220, 250, 460, 375);
 		view.setVisible(true);

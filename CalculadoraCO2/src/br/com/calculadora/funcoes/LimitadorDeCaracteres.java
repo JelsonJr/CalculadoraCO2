@@ -4,7 +4,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
-public class LimitaCaracteres extends PlainDocument {
+public class LimitadorDeCaracteres extends PlainDocument {
 	
 	private static final long serialVersionUID = 3800658577038803458L;
 
@@ -15,7 +15,7 @@ public class LimitaCaracteres extends PlainDocument {
 	private int qtdCaracteres;
 	private TipoNumero tpNumero;
 	
-	public LimitaCaracteres(int qtdCaracteres, TipoNumero tpNumero) {
+	public LimitadorDeCaracteres(int qtdCaracteres, TipoNumero tpNumero) {
 		this.qtdCaracteres = qtdCaracteres;
 		this.tpNumero = tpNumero;
 	}

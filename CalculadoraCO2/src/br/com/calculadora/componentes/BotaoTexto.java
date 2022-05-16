@@ -11,7 +11,7 @@ public class BotaoTexto implements BotaoDeArquivo {
 	@Override
 	public JButton visualizarArquivo(String nomeArquivo) {
 		JButton botaoTxt = new JButton("Visualizar");
-		botaoTxt.addActionListener((ActionEvent e) -> leitorArquivo.exibeTextoEmTela(nomeArquivo));
+		botaoTxt.addActionListener((ActionEvent e) -> leitorArquivo.exibeTexto(nomeArquivo));
 		botaoTxt.setBounds(292, 83, 100, 35);
 
 		return botaoTxt;

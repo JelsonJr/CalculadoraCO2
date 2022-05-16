@@ -45,16 +45,16 @@ public class ViewInicial {
 		lblTituloInicial.setFont(new Font("Monospaced", Font.BOLD, 20));
 		frame.getContentPane().add(lblTituloInicial);
 
-		frame.getContentPane().add(botoes.chamaViews("CALCULAR", 65, new CalculadoraCO2()));
+		frame.getContentPane().add(botoes.chamaViews("CALCULAR", new CalculadoraCO2(), 65));
 
-		frame.getContentPane().add(botoes.chamaViews("FOTOSSÍNTESE", 110,
-				new ViewGenerica("COMO OCORRE A FOTOSSÍNTESE?", "Fotossintese.txt", "fotossintese.jpg")));
+		frame.getContentPane().add(botoes.chamaViews("FOTOSSÍNTESE",
+				new ViewGenerica("COMO OCORRE A FOTOSSÍNTESE?", "Fotossintese.txt", "fotossintese.jpg"), 110));
 
-		frame.getContentPane().add(botoes.chamaViews("EFEITO ESTUFA", 155,
-				new ViewGenerica("O PROCESSO DO EFEITO ESTUFA", "EfeitoEstufa.txt", "Efeito_estufa.jpg")));
+		frame.getContentPane().add(botoes.chamaViews("EFEITO ESTUFA",
+				new ViewGenerica("O PROCESSO DO EFEITO ESTUFA", "EfeitoEstufa.txt", "Efeito_estufa.jpg"), 155));
 
-		frame.getContentPane().add(botoes.chamaViews("COMBUSTÃO", 200,
-				new ViewGenerica("COMO ACONTECE A COMBUSTÃO?", "Combustao.txt", "fotossintese.jpg")));
+		frame.getContentPane().add(botoes.chamaViews("COMBUSTÃO",
+				new ViewGenerica("COMO ACONTECE A COMBUSTÃO?", "Combustao.txt", "combustao.jpeg"), 200));
 
 	}
 }
